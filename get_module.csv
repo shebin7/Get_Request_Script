@@ -1,0 +1,3 @@
+get_module,get_api,get_username,get_password
+get_interfaces,data/ietf-interfaces:interfaces,developer,C1sco12345
+get_ospf,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router,developer,C1sco12345
