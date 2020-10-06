@@ -1,3 +1,5 @@
+![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/Get_API_Req.gif)
+
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
