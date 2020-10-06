@@ -53,7 +53,9 @@ console.print('\n')
 console.print("Press [bold][red]<TAB>[/bold][/red] to autocomplete words",style='yellow bold')
 console.print('\n')
 user_module= input("Please Enter the API module you want to retrieve =>")
-console.print("You entered the following->"+user_module,style='bold green')
+console.print('\n')
+console.print("You entered the following module->"+user_module,style='bold purple')
+time.sleep(0.5)
 
 
 def Rest_Get():
@@ -82,10 +84,14 @@ def Rest_Get():
                     
         response = requests.get(url=url,auth=("developer","C1sco12345"),verify=False,headers=headers).json()
         final_result = json.dumps(response,indent=2,sort_keys=True)
+        console.print('Please Wait for the Results....',style='bold green')
         console.print('='*40)
+        time.sleep(1)
         console.print(final_result,style='bold blue')
     except NameError as nr:
         console.print("The API you entered not listed in our database",style='bold red')
+    except Exception:
+        console.print("Device not able to return anything,since no configuration found on the device for requested API",style='bold red')
     
     finally:
         console.print('='*40)
