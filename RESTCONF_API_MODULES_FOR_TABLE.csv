@@ -1,0 +1,12 @@
+Modules,Vendors,Description,Platform
+,,,
+get_all_vrfs_all_routes,IETF/OPEN,Gets all routes from all vrfs,IOS-XE
+get_bgp_c,Cisco,Gets all bgp configuration,IOS-XE
+get_default_ipv4_routes,IETF/OPEN,Gets ipv4 routes from routing table of default vrf,IOS-XE
+get_default_ipv6_routes,IETF/OPEN,Gets ipv6 routes from routing table of default vrf,IOS-XE
+get_eigrp,Cisco,Gets all eigrp configuration,IOS-XE
+get_interfaces,IETF/OPEN,Gets all interfaces configuration,IOS-XE
+get_interfaces_c,Cisco,Gets all interfaces configuration,IOS-XE
+get_isis_c,Cisco,Gets all isis configuration,IOS-XE
+get_ospf_c,Cisco,Gets all ospf configuration,IOS-XE
+get_rip_c,Cisco,Gets all rip configuration,IOS-XE
