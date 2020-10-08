@@ -20,12 +20,12 @@ global module_list
 
 module_list=[]
 console = Console()
-module_table =Table(title="API module Table")
+module_table =Table(title="API module Table",show_header=True,header_style='bold magenta',show_footer=True)
 
-module_table.add_column('Modules',style='yellow bold')
-module_table.add_column('Vendors',style='blue bold')
-module_table.add_column("Description",style='purple bold')
-module_table.add_column("Platform",style='bold yellow')
+module_table.add_column('Modules',style='yellow bold',width=32)
+module_table.add_column('Vendors',style='blue bold',width=12)
+module_table.add_column("Description",style='purple bold',width=52)
+module_table.add_column("Platform",style='bold yellow',width=8)
 
 with open(restconf_api_module,'r') as mr:
     module_read = csv.DictReader(mr) 
@@ -35,7 +35,7 @@ with open(restconf_api_module,'r') as mr:
         Desc        = row['Description'] 
         Platform    = row['Platform'] 
         module_table.add_row(module_name,vendor_name,Desc,Platform) 
-        module_list.append(module_name) 
+        #module_list.append(module_name) 
 
 
 
