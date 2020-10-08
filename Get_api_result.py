@@ -22,12 +22,12 @@ num_rows = len(fopen.readlines())
 
 module_list=[]
 console = Console()
-module_table =Table(title="API module Table",show_header=True,header_style='bold magenta')
+modules_table =Table(title="API module Table",show_header=True,header_style='bold magenta')
 
-module_table.add_column('Modules',style='yellow bold',width=32)
-module_table.add_column('Vendors',style='blue bold',width=12)
-module_table.add_column("Description",style='purple bold',width=52)
-module_table.add_column("Platform",style='bold yellow',width=8)
+modules_table.add_column('Modules',style='yellow bold',width=32)
+modules_table.add_column('Vendors',style='blue bold',width=12)
+modules_table.add_column("Description",style='purple bold',width=52)
+modules_table.add_column("Platform",style='bold yellow',width=8)
 
 with open(restconf_api_module,'r') as mr:
     module_read = csv.DictReader(mr) 
@@ -36,7 +36,7 @@ with open(restconf_api_module,'r') as mr:
         vendor_name = row['Vendors'] 
         Desc        = row['Description'] 
         Platform    = row['Platform'] 
-        module_table.add_row(module_name,vendor_name,Desc,Platform) 
+        modules_table.add_row(module_name,vendor_name,Desc,Platform) 
         module_list.append(module_name)
         continue 
 
@@ -69,9 +69,7 @@ completer = AutoComplete(module_list)
 readline.set_completer(completer.complete)
 readline.parse_and_bind('tab: complete')
 
-module_table.add_row('get_ospf','Cisco',"Gets configuration of OSPF")
-module_table.add_row('get_interfaces','IETF/Open','Gets all interfaces details')
-console.print(module_table)
+console.print(modules_table)
 console.print('\n')
 console.print("Press [bold][red]<TAB>[/bold][/red] to autocomplete words",style='yellow bold')
 console.print('\n')

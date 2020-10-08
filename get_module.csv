@@ -1,5 +1,4 @@
 get_module,get_api,get_username,get_password
-,,,
 get_all_vrfs_all_routes,data/ietf-routing:routing-state/routing-instance,developer,C1sco12350
 get_bgp_c,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-bgp:bgp,developer,C1sco12351
 get_default_ipv4_routes,data/ietf-routing:routing-state/routing-instance=default/ribs/rib=ipv4-default,developer,C1sco12348
@@ -9,4 +8,3 @@ get_interfaces,data/ietf-interfaces:interfaces,developer,C1sco12345
 get_isis_c,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-isis:isis-container,developer,C1sco12353
 get_ospf_c,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-ospf:ospf,developer,C1sco12346
 get_rip_c,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-rip:rip,developer,C1sco12352
-,,developer,C1sco12354

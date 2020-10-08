@@ -1,4 +1,4 @@
-![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/Get_API_Req.gif)
+![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/GET_API_REQUESTS.gif)
 
 ## Table of contents
 * [General info](#general-info)

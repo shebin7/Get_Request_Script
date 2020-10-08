@@ -7,5 +7,5 @@ get_eigrp,Cisco,Gets eigrp configuration from device,IOS-XE
 get_interfaces,IETF/OPEN,Gets all interfacess details and configuration,IOS-XE
 get_interfaces_c,Cisco,Gets all interfacess details and configuration,IOS-XE
 get_isis_c,Cisco,Gets isis configuration from device,IOS-XE
-get_ospf_c,Cisco,Gets ospf configuration from device,IOS-XR
-get_rip_c,Cisco,Gets rip configuration from device,IOS-XR
+get_ospf_c,Cisco,Gets ospf configuration from device,IOS-XE
+get_rip_c,Cisco,Gets rip configuration from device,IOS-XE
