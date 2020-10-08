@@ -11,11 +11,13 @@ import readline
 
 
 
-
-restconf_api_module = '/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/RESTCONF_API_MODULES_FOR_TABLE.csv'
+restconf_api_module ='/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/RESTCONF_API_MODULES_FOR_TABLE.csv'
 
 global user_module
 global module_list
+
+fopen=open(restconf_api_module)
+num_rows = len(fopen.readlines())
 
 
 module_list=[]
@@ -35,9 +37,8 @@ with open(restconf_api_module,'r') as mr:
         Desc        = row['Description'] 
         Platform    = row['Platform'] 
         module_table.add_row(module_name,vendor_name,Desc,Platform) 
-        module_list.append(module_name) 
-
-
+        module_list.append(module_name)
+        continue 
 
 
 ### Custom Autocomplete Class for completing users input ###
