@@ -10,14 +10,11 @@ import time
 import readline
 
 
-
+#Move to the Get_Request_Script Folder and Specify the path of RESTCONF_API_MODULES_FOR_TABLE file here# 
 restconf_api_module ='/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/RESTCONF_API_MODULES_FOR_TABLE.csv'
 
 global user_module
 global module_list
-
-fopen=open(restconf_api_module)
-num_rows = len(fopen.readlines())
 
 
 module_list=[]
@@ -82,7 +79,8 @@ time.sleep(0.5)
 ### This function will execute the request by user and will return Results ###
 def Rest_Get():
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
+    
+    #Move to the Get_Request_Script Folder and Specify the path of get_module_csv file here# 
     get_module_csv = '/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/get_module.csv'
 
     main_url = 'https://ios-xe-mgmt-latest.cisco.com:9443/restconf/'
