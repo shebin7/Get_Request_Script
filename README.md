@@ -1,3 +1,6 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/shebin7/Get_Request_Script)
+
+
 ![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/GET_API_REQUESTS.gif)
 
 ## Table of contents
