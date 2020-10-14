@@ -1,6 +1,6 @@
 get_module,get_api,get_username,get_password
-get_all_vrfs_all_routes,data/ietf-routing:routing-state/routing-instance,developer,C1sco12350
-get_bgp_c,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-bgp:bgp,developer,C1sco12351
+get_all_vrfs_all_routes,/api/,developer,C1sco12350
+get_bgp_c,/api/,developer,C1sco12351
 get_default_ipv4_routes,data/ietf-routing:routing-state/routing-instance=default/ribs/rib=ipv4-default,developer,C1sco12348
 get_default_ipv6_routes,data/ietf-routing:routing-state/routing-instance=default/ribs/rib=ipv6-default,developer,C1sco12349
 get_eigrp,data/Cisco-IOS-XE-native:native/Cisco-IOS-XE-native:router/Cisco-IOS-XE-eigrp:eigrp,developer,C1sco12347
