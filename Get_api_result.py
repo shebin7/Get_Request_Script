@@ -18,6 +18,7 @@ Device_Platform =  Prompt.ask("[bold][blue] Please Enter Platform Name to connec
 
 ### Path of RESTCONF_API_MODULES_FOR_TABLE , This file contains modules value of API Module Table# 
 restconf_api_module ='/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/'+Device_Platform+'-RESTCONF_API_MODULES_FOR_TABLE.csv'
+print(restconf_api_module)
 
 global user_module
 global module_list
@@ -89,6 +90,7 @@ def Rest_Get():
     
     #Move to the Get_Request_Script Folder and Specify the path of get_module_csv file here# 
     get_module_csv = '/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/'+Device_Platform+'-get_module.csv'
+    print(get_module_csv)
    
     
     if "IOS-XE" in Device_Platform:
@@ -108,9 +110,13 @@ def Rest_Get():
             choices=['sbx-nxos-mgmt.cisco.com'],default='sbx-nxos-mgmt.cisco.com')
         
         port_number = Prompt.ask("[bold][yellow] Please Enter Port Number",choices=['443','80'],default='443')
+    
+    #hostname=hostname
+    #port_number=port_number
                   
     
     try:
+        print("inside Try")
         with open(get_module_csv,'r') as dr:
 
             csv_dict_read = csv.DictReader(dr)
@@ -141,23 +147,34 @@ def Rest_Get():
                 pass
 
             elif "NX-OS" in Device_Platform:
+                print("inside nxos")
+                print('rest_csv',restconf_api_module)
 
-                nxos_url = 'https://{}'+api 
+                nxos_url = 'https://{}'.format(hostname)+str(api) 
+                print(nxos_url)
                 headers={'Accept':'application/json','Content-Type':'application/json'}
                 credentials = {'username':'admin','password':'Admin_1234!'}
                 login_body = {"aaaUser":{"attributes":{"name":credentials['username'],"pwd":credentials['password']}}}
-                login_url = 'https://{}/api/mo/aaLogin.json'.format(hostname)
+                login_url = 'https://{}/api/mo/aaaLogin.json'.format(hostname)
+                print(login_url)
 
                 ### Login into device and getting the token back ###
-                login_response = requests.post(url=url,auth=(credentials['username'],credentials['password']),data=json.dumps(login_body),verify=False,timeout=10).json()
-
+                login_response = requests.post(url=login_url,data=json.dumps(login_body),verify=False,timeout=10).json()
+                print(login_response)
                 token = login_response['imdata'][0]['aaaLogin']['attributes']['token']
                 cookies = {}
-                cookies['APIC-Cookies'] = token
+                cookies['APIC-Cookie'] = token
+                print(cookies)
+               # login_response = requests.post(url=login_url,data=json.dumps(login_body),verify=False,timeout=10).json()
+               # print(login_response)
+               # token = login_response['imdata'][0]['aaaLogin']['attributes']['token']
+               # cookies = {}
+               # cookies['APIC-Cookie'] = token
+               # print(cookies)
 
                 ### Getting Data for the requested models by user ###
 
-                response_data = requests.get(url=nxos_url,cookie=cookies,timeout=10,verify=False).json()
+                response_data = requests.get(url=nxos_url,cookies=cookies,timeout=10,verify=False).json()
                 final_result = json.dumps(response_data,indent=2,sort_keys=True)
                 console.print('Please Wait for the Results....',style='bold green')
                 console.print('='*40)
