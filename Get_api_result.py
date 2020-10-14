@@ -3,6 +3,7 @@ from json.decoder import JSONDecodeError
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
+from rich.prompt import Prompt,Confirm,Console
 import requests
 import json
 import csv
@@ -10,8 +11,12 @@ import time
 import readline
 
 
+
+Device_Platform =  Prompt.ask("[bold][blue] Please Enter Port Number",choices=['IOS-XE','IOS-XR','NX-OS'])
+
+
 #Move to the Get_Request_Script Folder and Specify the path of RESTCONF_API_MODULES_FOR_TABLE file here# 
-restconf_api_module ='/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/RESTCONF_API_MODULES_FOR_TABLE.csv'
+restconf_api_module ='/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/'+Device_Platform+'-RESTCONF_API_MODULES_FOR_TABLE.csv'
 
 global user_module
 global module_list
@@ -70,7 +75,7 @@ console.print(modules_table)
 console.print('\n')
 console.print("Press [bold][red]<TAB>[/bold][/red] to autocomplete words",style='yellow bold')
 console.print('\n')
-user_module= input("Please Enter the API module you want to retrieve =>")
+user_module= Prompt.ask("[bold][yellow]Select your API to request Data =[/bold][/yellow]"choices=module_list)  
 console.print('\n')
 console.print("You entered the following module->"+user_module,style='bold purple')
 time.sleep(0.5)
@@ -81,11 +86,30 @@ def Rest_Get():
     requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
     
     #Move to the Get_Request_Script Folder and Specify the path of get_module_csv file here# 
-    get_module_csv = '/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/get_module.csv'
+    get_module_csv = '/home/shebin/NETDEVOPS/Net_automation_Project/RESTCONF/Get_Request_Script/'+Device_Platform'-get_module.csv'
+   
+    
+    if "IOS-XE" in Device_Platform:
+        
+        hostname = Prompt.ask("[bold][purple]Please Enter your End Device Hostname or IP-Address to connect->[/bold][/purple]",choices=['sbx-nxos-mgmt.cisco.com'],default='ios-xe-mgmt.cisco.com')
+        port_number = Prompt.ask("[bold][yellow] Please Enter Port Number",choices=['9443','443'],default='9443')
+        headers={'Accept':'application/yang-data+json','Content-Type':'application/yang-data+json'}
+    
+    elif "IOS_-XR" in Device_Platform:
+        pass
+    
+    elif 'NX-OS':
 
-    main_url = 'https://ios-xe-mgmt-latest.cisco.com:9443/restconf/'
+        hostname = Prompt.ask("[bold][purple]Please Enter Hostname or IP-Address of End Device to connect->[/bold][/purple]",choices=['ios-xe-mgmt.cisco.com'],default='ios-xe-mgmt.cisco.com')
+        port_number = Prompt.ask("[bold][yellow] Please Enter Port Number",choices=['443','80'],default='9443')
+        headers={'Accept':'application/json','Content-Type':'application/json'}
 
-    headers={'Accept':'application/yang-data+json','Content-Type':'application/yang-data+json'}
+    
+    
+
+    main_url = 'https://{}:{}'.format(hostname,port_number)
+
+    
 
     
     try:
