@@ -27,7 +27,6 @@ try:
     global module_list
 
 
-
     module_list=[]
     modules_table =Table(title="API module Table",show_header=True,header_style='bold magenta')
 
