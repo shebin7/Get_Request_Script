@@ -1,0 +1,3 @@
+Modules,Vendors,Description,Platform
+get_vlans,Cisco,Gets all vlans from device,NX-OS
+
