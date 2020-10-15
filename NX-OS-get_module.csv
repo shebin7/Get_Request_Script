@@ -1,2 +1,10 @@
 get_module,get_api,get_username,get_password
-get_vlans,/api/node/mo/sys/bd.json,developer,C1sco12350
+get_vlans,/api/node/mo/sys/bd.json,admin,Admin_1234!
+get_interface,/api/node/mo/sys/intf.json,admin,Admin_1234!
+get_system_table,/api/node/mo/sys/systemTable.json,admin,Admin_1234!
+get_arp_mgmt,/api/node/mo/sys/arp/inst/dom-management.json,admin,Admin_1234!
+get_vrf,/api/node/mo/sys/vrfTable.json,admin,Admin_1234!
+get_bgp-ipv4_unicast,/api/node/mo/sys/bgp/inst/dom-default/af-[ipv4-ucast].json,admin,Admin_1234!
+get_vdc_info,/api/node/mo/sys/vdc-1,admin,Admin_1234!
+get_version_info,/api/node/class/sysmgrShowVersion.json,admin,Admin_1234!
+get_sys_cpu_history,/api/node/mo/sys/procsys/syscpusummary/syscpuhistory-last60seconds.json,admin,Admin_1234!

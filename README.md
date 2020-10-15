@@ -20,6 +20,8 @@ Project is created with:
 
 Network Device from Cisco Sandbox
 * [Cisco IOS-XE Sandbox](https://developer.cisco.com/site/sandbox/)
+* [Cicso NX-OS Sandbox](https://developer.cisco.com/site/sandbox/)
+* [Ciso IOS-XR Sandbox](https://developer.cisco.com/site/sandbox/)
 
 
 ## Libraries

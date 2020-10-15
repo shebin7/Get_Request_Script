@@ -1,3 +1,12 @@
 Modules,Vendors,Description,Platform
 get_vlans,Cisco,Gets all vlans from device,NX-OS
-
+get_interfaces,Cisco,Gets all interfaces of Device,NX-OS
+get_system_table,Cisco,Gets System Information,NX-OS
+get_arp,Cisco,Get all arp informations,NX-OS
+get_bgp-ipv4_unicast,Cisco,Get bgp ipv4 informations,NX-OS
+get_arp_mgmt,Cisco,Get arp table informations,NX-OS
+get_bgp,Cisco,Gets BGP information,NX-OS
+get_vrf,Cisco,Gets VRF Information,NX-OS
+get_vdc_info,Cisco,Gets VDC Info,NX-OS
+get_version_info,Cisco,Gets Version Info,NX-OS
+get_sys_cpu_history,Cisco,Gets Sys CPU history,NX-OS

@@ -81,15 +81,16 @@ try:
     console.print('\n')
     console.print("Press [bold][red]<TAB> <TAB>[/bold][/red] to autocomplete words",style='yellow bold')
     console.print('\n')
-    console.print("[bold][yellow]Select your API to request Data =[/bold][/yellow]")
-    user_module= Prompt.ask("[bold][yellow]Select your API to request Data =[/bold][/yellow]=")  
+    user_module= Prompt.ask("[bold][yellow]Select your API to request Data=[/bold][/yellow]")  
     console.print('\n')
-    console.print("You entered the following module->"+user_module,style='bold purple')
+    console.print("You entered the following module = "+user_module,style='bold purple')
     time.sleep(0.5)
 
 
     ### This function will execute the request by user and will return Results ###
     def Rest_Get():
+
+        prompt_str='\n IF YOU DONT KNOW THE HOSTNAME AND PORT TO [bold][blue]<CONNECT DEVICE>[/bold][/blue] JUST PRESS [bold][blue]<ENTER> [/bold][/blue]DEFAULT VALUES WILL BE SELECTED \n'
         requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
     
         #Move to the Get_Request_Script Folder and Specify the path of get_module_csv file here# 
@@ -98,7 +99,7 @@ try:
    
     
         if "IOS-XE" in Device_Platform:
-        
+            console.print(prompt_str,style='bold yellow on black')
             hostname = Prompt.ask("[bold][purple]Please Enter your End Device Hostname or IP-Address to connect->[/bold][/purple]",
                 choices=['ios-xe-mgmt.cisco.com'],default='ios-xe-mgmt.cisco.com')
         
@@ -110,7 +111,7 @@ try:
             pass
     
         elif 'NX-OS':
-
+            console.print(prompt_str,style='bold yellow on black')
             hostname = Prompt.ask("[bold][purple]Please Enter Hostname or IP-Address of End Device to connect->[/bold][/purple]",
                 choices=['sbx-nxos-mgmt.cisco.com'],default='sbx-nxos-mgmt.cisco.com')
         
