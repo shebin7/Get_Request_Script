@@ -1,11 +1,18 @@
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/shebin7/Get_Request_Script)
 
 
-![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/GET_API_REQUESTS.gif)
+* IOS-XE
+![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/API_REQUESTS_IOS-XE.gif)
+
+
+* NX-OS
+![alt text](https://github.com/shebin7/Get_Request_Script/blob/master/API_REQUESTS_NX-OS.gif)
+
+
 
 ## Table of contents
 * [General info](#general-info)
-* [Technologies](#technologies)
+* [Technologies](#technologies)         
 * [Libraries](#libraries)
 * [Setup](#setup)
 
