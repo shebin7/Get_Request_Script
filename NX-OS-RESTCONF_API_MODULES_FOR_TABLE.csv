@@ -1,6 +1,6 @@
 Modules,Vendors,Description,Platform
 get_arp,Cisco,Gets arp information,NX-OS
-get_bgp,Cisco,Gets BGP  Data,
+get_bgp,Cisco,Gets BGP  Data,NX-OS
 get_interface_config,Cisco,Gets interfaces configuration of Device,NX-OS
 get_interface_oper,Cisco,Gets operational information of all interfaces,NX-OS
 get_ospf,Cisco,Gets all OSPF Data ,NX-OS
