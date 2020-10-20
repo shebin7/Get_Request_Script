@@ -17,7 +17,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is based on RESTAPI to request information from Network Device,it will list all the available API modules,
+This project is based on REST API to request information from Network Device,it will list all the available API modules,
 user can select the module and can send request to the end device which will return the response in JSON format,
 An autocomplete feature is also added to make the request module easily accessible. 
 	
